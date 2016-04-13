@@ -12,12 +12,12 @@ HW_INIT    = '\x1b\x40'          # Clear data in buffer and reset modes
 HW_SELECT  = '\x1b\x3d\x01'      # Printer select
 HW_RESET   = '\x1b\x3f\x0a\x00'  # Reset printer hardware
 # Cash Drawer
-CD_KICK_2  = '\x1b\x70\x00'      # Sends a pulse to pin 2 [] 
-CD_KICK_5  = '\x1b\x70\x01'      # Sends a pulse to pin 5 [] 
+CD_KICK_2  = '\x1b\x70\x00'      # Sends a pulse to pin 2 []
+CD_KICK_5  = '\x1b\x70\x01'      # Sends a pulse to pin 5 []
 # Paper
 PAPER_FULL_CUT  = '\x1d\x56\x00' # Full cut paper
 PAPER_PART_CUT  = '\x1d\x56\x01' # Partial cut paper
-# Text format   
+# Text format
 TXT_NORMAL      = '\x1b\x21\x00' # Normal text
 TXT_2HEIGHT     = '\x1b\x21\x10' # Double height text
 TXT_2WIDTH      = '\x1b\x21\x20' # Double width text
@@ -69,7 +69,7 @@ BARCODE_EAN8    = '\x1d\x6b\x03' # Barcode type EAN8
 BARCODE_CODE39  = '\x1d\x6b\x04' # Barcode type CODE39
 BARCODE_ITF     = '\x1d\x6b\x05' # Barcode type ITF
 BARCODE_NW7     = '\x1d\x6b\x06' # Barcode type NW7
-# Image format  
+# Image format
 S_RASTER_N      = '\x1d\x76\x30\x00' # Set raster image normal size
 S_RASTER_2W     = '\x1d\x76\x30\x01' # Set raster image double width
 S_RASTER_2H     = '\x1d\x76\x30\x02' # Set raster image double height

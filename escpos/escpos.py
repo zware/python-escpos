@@ -39,7 +39,7 @@ class Escpos:
         i = 0
         cont = 0
         buffer = ""
-       
+
         self._raw(S_RASTER_N)
         buffer = "%02X%02X%02X%02X" % (((size[0]/size[1])/8), 0, size[1]&0xff, size[1]>>8)
         self._raw(buffer.decode('hex'))
@@ -97,7 +97,7 @@ class Escpos:
                         break
                     elif im_color > (255 * 3 / pattern_len * pattern_len) and im_color <= (255 * 3):
                         pix_line += im_pattern[-1]
-                        break 
+                        break
             pix_line += im_right
             img_size[0] += im_border[1]
 
@@ -108,13 +108,13 @@ class Escpos:
         """ Open image file """
         im_open = Image.open(path_img)
 
-	# Remove the alpha channel on transparent images
-	if im_open.mode == 'RGBA':
-		im_open.load()
-		im = Image.new("RGB", im_open.size, (255, 255, 255))
-		im.paste(im_open, mask=im_open.split()[3])
-	else:
-	        im = im_open.convert("RGB")
+        # Remove the alpha channel on transparent images
+        if im_open.mode == 'RGBA':
+            im_open.load()
+            im = Image.new("RGB", im_open.size, (255, 255, 255))
+            im.paste(im_open, mask=im_open.split()[3])
+        else:
+            im = im_open.convert("RGB")
 
         # Convert the RGB image in printable image
         self._convert_image(im)
@@ -205,9 +205,9 @@ class Escpos:
             self._raw(BARCODE_TXT_BTH)
         elif pos.upper() == "ABOVE":
             self._raw(BARCODE_TXT_ABV)
-        else:  # DEFAULT POSITION: BELOW 
+        else:  # DEFAULT POSITION: BELOW
             self._raw(BARCODE_TXT_BLW)
-        # Type 
+        # Type
         if bc.upper() == "UPC-A":
             self._raw(BARCODE_UPC_A)
         elif bc.upper() == "UPC-E":
@@ -230,7 +230,7 @@ class Escpos:
         else:
             raise exception.BarcodeCodeError()
 
-        
+
     def text(self, txt):
         """ Print alpha-numeric text """
         if txt:

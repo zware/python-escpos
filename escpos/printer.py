@@ -85,7 +85,7 @@ class Serial(Escpos):
         @param baudrate : Baud rate for serial transmission
         @param bytesize : Serial buffer size
         @param timeout  : Read/Write timeout
-        
+
         @param parity   : Parity checking
         @param stopbits : Number of stop bits
         @param xonxoff  : Software flow control
@@ -95,12 +95,12 @@ class Serial(Escpos):
         self.baudrate = baudrate
         self.bytesize = bytesize
         self.timeout  = timeout
-        
+
         self.parity = parity
         self.stopbits = stopbits
         self.xonxoff = xonxoff
         self.dsrdtr = dsrdtr
-        
+
         self.open()
 
 
